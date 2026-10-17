@@ -9,7 +9,7 @@ from flask import Flask, render_template_string, request, session, make_response
 import telebot
 from telebot import types
 
-TOKEN = "8925665338:AAG-di-iZ3KzyriU_RlOkSSw1KplFzJr3c8"
+TOKEN = "8925665338:AAEDnwo_ySDi99_6CUf431rEcABB6tyOxIw"
 bot = telebot.TeleBot(TOKEN)
 DEV_USERNAME = "raouf100K"
 
