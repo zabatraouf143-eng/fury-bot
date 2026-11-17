@@ -253,7 +253,7 @@ def run_telegram_bot():
                                 send_msg(chat_id, f"✅ تم تحديث رابط الزر رقم {slot} بنجاح!")
                                 
                             conn.close()
-                                                  elif "callback_query" in update:
+                        elif "callback_query" in update:
                         cq = update["callback_query"]
                         cq_id = cq["id"]
                         chat_id = cq["message"]["chat"]["id"]
