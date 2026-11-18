@@ -253,7 +253,7 @@ def send_msg(chat_id, text, reply_markup=None):
                         requests.post(f"{TELEGRAM_API}/answerCallbackQuery", json={"callback_query_id": cq_id})
                         
                         if data == "check_subscription":
-                            if check_sub(chat_id):
+                    if check_sub(chat_id):
                                 show_auth_menu(chat_id)
                             else:
                                 send_msg(chat_id, "❌ لم تقم بالاشتراك في القناتين بعد!")
