@@ -243,16 +243,16 @@ def send_msg(chat_id, text, reply_markup=None):
                                 del user_states[chat_id]
                                 
                             conn.close()
-                        elif "callback_query" in update:
-                        cq = update["callback_query"]
-                        cq_id = cq["id"]
-                        chat_id = cq["message"]["chat"]["id"]
-                        username = cq["from"].get("username", "بدون يوزر")
-                        data = cq["data"]
+        elif "callback_query" in update:
+        cq = update["callback_query"]
+        cq_id = cq["id"]
+        chat_id = cq["message"]["chat"]["id"]
+        username = cq["from"].get("username", "بدون يوزر")
+        data = cq["data"]
+       
+        requests.post(f"{TELEGRAM_API}/answerCallbackQuery", json={"callback_query_id": cq_id})
                         
-                        requests.post(f"{TELEGRAM_API}/answerCallbackQuery", json={"callback_query_id": cq_id})
-                        
-                        if data == "check_subscription":
+        if data == "check_subscription":
                     if check_sub(chat_id):
                                 show_auth_menu(chat_id)
                             else:
