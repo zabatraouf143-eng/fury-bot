@@ -145,7 +145,7 @@ def send_msg(chat_id, text, reply_markup=None):
         payload["reply_markup"] = reply_markup
     requests.post(f"{TELEGRAM_API}/sendMessage", json=payload)
     def run_telegram_bot():
-    offset = 0
+        offset = 0
     user_states = {}
     
     while True:
