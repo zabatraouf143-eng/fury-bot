@@ -243,7 +243,7 @@ def send_msg(chat_id, text, reply_markup=None):
                                 del user_states[chat_id]
                                 
                             conn.close()
-        elif "callback_query" in update:
+elif "callback_query" in update:
         cq = update["callback_query"]
         cq_id = cq["id"]
         chat_id = cq["message"]["chat"]["id"]
